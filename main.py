@@ -11,7 +11,8 @@ offers = soup.find_all("div", class_="offer-wrapper")
 print("{} offers found".format(len(offers)))
 
 for offer in offers:
-    id = offer.get("data-id")
+    code = offer.find("table", class_="fixed")
+    id = code.get("data-id")
     name = offer.find("a", class_="marginright5").find("strong").get_text()
     price = offer.find("p", class_="price").find("strong").get_text()
     delivery = False
