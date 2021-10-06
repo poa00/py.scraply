@@ -20,6 +20,6 @@ for offer in offers:
         delivery = True
     link = offer_table.find("a", class_="thumb").get("href")
     img = offer_table.find("img", class_="fleft").get("src")
+    loc = offer_table.find("td", class_="bottom-cell").find("small",class_="breadcrumb").get_text().strip()
+    
     print("{} | {}  |  {}  |  {}".format(id, price, delivery, name))
-    print("{}".format(link))
-    print("{}".format(img))
